@@ -1,0 +1,14 @@
+exportPattern("^[[:alpha:]]+")
+useDynLib(TFunHDDC, .C_imahalanobis)
+S3method(predict, tfunHDDC)
+import(fda.usc)
+importFrom("graphics", "abline", "lines", "par", "plot", "points","text",
+           "title", "mtext")
+importFrom("stats", "kmeans", "rmultinom", "cov.wt", "uniroot", "runif", "rt",
+           "rnorm")
+importFrom("utils", "data", "flush.console")
+importFrom("tclust", "tkmeans")
+importFrom("stringr", "str_pad")
+importFrom("MASS", "mvrnorm")
+importFrom("fda", "create.fourier.basis", "create.bspline.basis", "eval.basis",
+           "smooth.basis", "plot.fd", "is.fd", "Eigen", "inprod" )
