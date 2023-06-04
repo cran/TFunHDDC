@@ -157,7 +157,7 @@ Runs every combination of hyperparameters (eg. K=2, threshold = 0.05, model = ..
 Cristina Anton, Iain Smith, and Malcolm Nielsen
 }
 \seealso{
-\code{\link[funHDDC]{funHDDC}}, \code{\link[teigen]{teigen}}, \code{\link{kmeans}}, \code{\link{tkmeans}},\code{\link{predict.tfunHDDC}}
+\code{\link[teigen]{teigen}}, \code{\link{kmeans}}, \code{\link{tkmeans}},\code{\link{predict.tfunHDDC}}
 }
 
 \examples{
@@ -177,7 +177,7 @@ model1=c("AkjBkQkDk", "AkjBQkDk", "AkBkQkDk", "ABkQkDk", "AkBQkDk", "ABQkDk")
 t1<-tfunHDDC(data$fd,K=3,threshold=0.2,init="kmeans",nb.rep=1,dfconstr="no", 
              dfupdate="numeric", model=model1[1], itermax=10)
 
-table(clm, t1$class)
+if (!is.null(t1$class)) table(clm, t1$class)
 
 ###############example when some classifications are known
 
@@ -191,7 +191,7 @@ known1[250]=clm[250]
 
 t2<-tfunHDDC(data$fd,K=3,threshold=0.2,init="kmeans",nb.rep=1,dfconstr="no", 
              dfupdate="numeric", model=model1[1],known=known1, itermax=10)
-table(clm, t2$class)
+if (!is.null(t2$class)) table(clm, t2$class)
 
 ####### example when some classifications are known 
 
@@ -202,7 +202,7 @@ known1[1:100]=rep(3,1,50)
 t3<-tfunHDDC(data$fd,K=3,threshold=0.2,init="kmeans",nb.rep=1,dfconstr="no", 
              dfupdate="numeric", model=model1[1],known=known1, itermax=10)
 
-table(clm, t3$class)
+if (!is.null(t3$class)) table(clm, t3$class)
 
 ############################multivariate simulated data
 set.seed(1027)
@@ -215,7 +215,7 @@ res_s = tfunHDDC(conTrig$fd, K=4, dfconstr="no", dfupdate="numeric",
                  model="ABKQKDK", init="kmeans", threshold=0.2, nb.rep=1, 
                  itermax=10)
 
-table(cls, res_s$class)
+if (!is.null(res_s$class)) table(cls, res_s$class)
 }
 }
 \keyword{cluster}

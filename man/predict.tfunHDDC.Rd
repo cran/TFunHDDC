@@ -70,11 +70,13 @@ t4<-tfunHDDC(data$fd[training],K=3,threshold=0.2,init="kmeans",nb.rep=1,
              dfconstr="no", dfupdate="numeric", model=model1[1],known=known1, 
              itermax = 10)
 
-table(clm[training], t4$class)
+if (!is.null(t4$class)) {
+	table(clm[training], t4$class)
 
-p1<-predict.tfunHDDC(t4,data$fd[test] )
+	p1<-predict.tfunHDDC(t4,data$fd[test] )
 
-table(clm[test], p1$class)
+	if (!is.null(p1$class)) table(clm[test], p1$class)
+}
 
 ###########################NOX data
 
@@ -94,11 +96,13 @@ t1<-tfunHDDC(data1$fd[training],K=2,threshold=0.6,init="kmeans",nb.rep=10,
              dfconstr="no", model=c("AkjBkQkDk", "AkjBQkDk", "AkBkQkDk", 
              "ABkQkDk", "AkBQkDk", "ABQkDk"),known=known1) 
 
-table(data1$groupd[training], t1$class)
+if (!is.null(t1$class)) {
+	table(data1$groupd[training], t1$class)
 
-p1<-predict.tfunHDDC(t1,data1$fd[test] )
+	p1<-predict.tfunHDDC(t1,data1$fd[test] )
 
-table(data1$groupd[test], p1$class)
+	if (!is.null(p1$class)) table(data1$groupd[test], p1$class)
+}
 }
 }
 \keyword{classif}

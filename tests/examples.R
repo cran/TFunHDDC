@@ -6,9 +6,9 @@ data = genModelFD(ncurves=300, nsplines=35, alpha=c(0.9,0.9,0.9),
 plot(data$fd, col = data$groupd)
 clm = data$groupd
 model1=c("AkjBkQkDk", "AkjBQkDk", "AkBkQkDk", "ABkQkDk", "AkBQkDk", "ABQkDk")
-t1<-tfunHDDC(data$fd,K=3,threshold=0.2,init="kmeans",nb.rep=1,
+t1<-tfunHDDC(data$fd,K=3,threshold=0.2,init="kmeans",nb.rep=2,
              dfconstr="no", dfupdate="numeric", model=model1[1], itermax = 10)
-table(clm, t1$class)
+if (!is.null(t1$class)) table(clm, t1$class)
 ###############example when some classifications are known
 if (FALSE) { # ommited due to long run times
   known1=rep(NA,1,300)
@@ -32,9 +32,11 @@ known1=clm[training]
 t4<-tfunHDDC(data$fd[training],K=3,threshold=0.2,init="kmeans",nb.rep=1,
              dfconstr="no", dfupdate="numeric", model=model1[1],known=known1, 
              itermax = 10)
-table(clm[training], t4$class)
-p1<-predict.tfunHDDC(t4,data$fd[test] )
-table(clm[test], p1$class)
+if (!is.null(t4$class)) {
+	table(clm[training], t4$class)
+	p1<-predict.tfunHDDC(t4,data$fd[test] )
+	if (!is.null(p1$class)) table(clm[test], p1$class)
+}
 ###########################NOX data
 data1=fitNOxBenchmark(15)
 plotNOx(data1)
@@ -69,6 +71,6 @@ cls = conTrig$groupd # groups 5 and 6 (contaminated) go into 1 and 3 respectivel
 res_s = tfunHDDC(conTrig$fd, K=4, dfconstr="no", dfupdate="numeric", 
                  model="ABKQKDK", init="kmeans", threshold=0.2, nb.rep=1, 
                  itermax=10)
-table(cls, res_s$class)
+if (!is.null(res_s$class)) table(cls, res_s$class)
 
 
