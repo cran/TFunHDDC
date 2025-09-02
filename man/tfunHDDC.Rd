@@ -76,7 +76,7 @@ A positive integer (default is 1 for kmeans initialization and 20 for random ini
 Logical. Should the results of all runs be kept? If so, an argument all_results is created in the results. Default is TRUE.
 }
   \item{kmeans.control}{
-A list. The elements of this list should match the parameters of the \code{\link{kmeans}} initialization (see kmeans help for details). The parameters are “iter.max”, “nstart” and “algorithm”. "alpha" is an added parameter for the \code{\link{tkmeans}} initialization (see tkmeans help for details)
+A list. The elements of this list should match the parameters of the \code{\link{kmeans}} initialization (see kmeans help for details). The parameters are “iter.max”, “nstart” and “algorithm”. "alpha" is an added parameter for the \code{\link[tclust]{tkmeans}} initialization (see tkmeans help for details)
 }
   \item{d_max}{
 A positive integer. The maximum number of dimensions to be computed. Default is 100. It means that the instrinsic dimension of any cluster cannot be larger than d_max. It quickens a lot the algorithm for datasets with a large number of variables (e.g. thousands).
@@ -157,7 +157,7 @@ Runs every combination of hyperparameters (eg. K=2, threshold = 0.05, model = ..
 Cristina Anton, Iain Smith, and Malcolm Nielsen
 }
 \seealso{
-\code{\link[teigen]{teigen}}, \code{\link{kmeans}}, \code{\link{tkmeans}},\code{\link{predict.tfunHDDC}}
+\code{\link[teigen]{teigen}}, \code{\link{kmeans}}, \code{\link[tclust]{tkmeans}},\code{\link{predict.tfunHDDC}}
 }
 
 \examples{

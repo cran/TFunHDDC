@@ -1,4 +1,4 @@
-7760ce7334658f580502ba782fc27b2d *DESCRIPTION
+f9476d7b69fe4b986bd29e06ec3b5f63 *DESCRIPTION
 22dc295cea7bfcdf460eb01cdd989aae *NAMESPACE
 63fb5c7d15291c4c7fc89c1a2fcf758c *R/NOxBenchmark.R
 ced0bd7dc0d598ac185f2c1080352cd4 *R/modelSimulation.R
@@ -12,8 +12,8 @@ a0c9a1e0f9ad5317eda6c2180c9e58e9 *man/contaminatedTriangles.Rd
 2ecd67e1afaaf910d7d28ec8469c8081 *man/genTriangles.Rd
 e542a6d54af4f0fe4793d7be8c917b99 *man/plotNOx.Rd
 209f56059724060c85b63392c6a89e6a *man/plotTriangles.Rd
-bfe35b17d7b646f550c61d7cb22a1d72 *man/predict.tfunHDDC.Rd
-8a61d9ba9ff52a80bd5581f03393a89f *man/tfunHDDC.Rd
+2cc9199952475a29dd05d36b23c8df96 *man/predict.tfunHDDC.Rd
+2f508e77d6fce03094461b372b59c7d9 *man/tfunHDDC.Rd
 23db8d22d1efccb9b7898e1db7e9a76e *src/TFunHDDC.c
 5541879b38788d45bee31160d6acd4dd *src/TFunHDDC.h
 8a006f1d3b7ac3bc67c92100f5ca54f5 *src/imahalanobis.c

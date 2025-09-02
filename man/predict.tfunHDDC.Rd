@@ -26,17 +26,16 @@ Arguments to be passed to other functions.
 \item{class}{Vector of maximum a posteriori classifications}
 }
 \references{
--Andrews JL, McNicholas PD (2012) Model-based clustering, classication,
+-Andrews JL, McNicholas PD (2012) Model-based clustering, classification,
 and discriminant analysis via mixtures of multivariate t-distributions:
-The teigen family. Stat Comput 22:1021{1029. <doi.org/10.1007/
+The teigen family. Stat Comput 22:1021-1029. <doi.org/10.1007/
 s11222-011-9272-x>
 
 -Andrews JL, Wickins JR, Boers NM, et al (2018) An R package for modelbased
-clustering and classication via the multivariate t distribution. Journal
+clustering and classification via the multivariate t distribution. Journal
 of Statistical Software 83(7):1-32
 
-- Cristina Anton, Iain Smith Model-based clustering of functional data via mixtures of \eqn{t} distributions. Advances in Data Analysis and Classification (to appear).
-}
+- Cristina Anton, Iain Smith (2024) Model-based clustering of functional data via mixtures of \eqn{t} distributions. Advances in Data Analysis and Classification 18(3): 563-595.
 }
 \author{
 Cristina Anton, Iain Smith
